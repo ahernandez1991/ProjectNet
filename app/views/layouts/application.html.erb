@@ -20,9 +20,9 @@
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Proyecto
       <span class="caret"></span></a>
       <ul class="dropdown-menu">
-        <li><a href="#">Consultar</a></li>
-        <li><a href="#">Crear</a></li>
-        <li><a href="#">Modificar</a></li>
+        <li><a href="http://localhost:3000/projects">Consultar</a></li>
+        <li><a href="http://localhost:3000/projects/new">Crear</a></li>
+        <li><a href="http://localhost:3000/projects/edit">Modificar</a></li>
       </ul>
     </li>
     <li class="dropdown">
@@ -45,10 +45,15 @@
         </li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Iniciar Sesión</a></li>
       <li><a href="http://localhost:3000"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión</a></li>
   </ul>
 </div>
 </nav>
+<h1 style="font-family:Dosis;" class="col-sm-4 col-sm-offset-0">ProjectNet ®</h1>
+<% if flash[:notice] %>
+  <div class="alert alert-info"><%= flash[:notice] %></div>
+<% end %>
           <%= yield %>
   </body>
 </html>
