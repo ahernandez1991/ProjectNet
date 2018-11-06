@@ -10,4 +10,6 @@
 #
 
 class Project < ApplicationRecord
+  validates :nombre, presence: true
+  validates :fecha, presence: true
 end
