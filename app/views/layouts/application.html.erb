@@ -30,7 +30,7 @@
       <span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="#">Consultar</a></li>
-        <li><a href="#">Crear</a></li>
+        <li><a href="http://localhost:3000/users/new">Crear</a></li>
         <li><a href="#">Modificar</a></li>
       </ul>
       </li>
@@ -39,17 +39,20 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Consultar</a></li>
-          <li><a href="#">Crear</a></li>
+          <li><a href="http://localhost:3000/users/new">Crear</a></li>
           <li><a href="#">Modificar</a></li>
         </ul>
         </li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Iniciar Sesión</a></li>
-      <li><a href="http://localhost:3000"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión</a></li>
+      <li><%= link_to "<span class='glyphicon glyphicon-log-in'></span> Iniciar Sesión ".html_safe, login_path, method: :new %></li>
+      <li><%= link_to "<span class='glyphicon glyphicon-user'></span> Cerrar Sesión ".html_safe, logout_path, method: :delete %></li>
   </ul>
 </div>
 </nav>
+<% if signed_in? %>
+  <div><h4 style="font-family:Dosis;" class="col-sm-12 col-sm-offset-0"> Hola <%= current_user.name %></h4>
+<% end %>
 <h1 style="font-family:Dosis;" class="col-sm-4 col-sm-offset-0">ProjectNet ®</h1>
 <% if flash[:notice] %>
   <div class="alert alert-info"><%= flash[:notice] %></div>
