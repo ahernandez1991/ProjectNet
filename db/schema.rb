@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_161615) do
+ActiveRecord::Schema.define(version: 2018_11_07_183745) do
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nombre"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2018_11_06_161615) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "introduccion"
+    t.string "planteamiento"
+    t.string "antecedentes"
+    t.string "justificacion"
+    t.string "marco_teorico"
+    t.string "objetivos"
+    t.string "desarrollo"
+    t.string "conclusiones"
+    t.string "referencias"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 

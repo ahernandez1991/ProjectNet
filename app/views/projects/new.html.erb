@@ -12,17 +12,14 @@
           </ul>
         </div>
       <% end %>
-      
+
         <%=form_for @p do |f| %>
           <div class="form-group">
             <%=f.text_field :nombre, class: "form-control input-lg", placeholder: "Nombre del proyecto"%>
           </div>
-          <div class="form-group">
-            <%= f.date_field :fecha, class: "form-control input-lg", placeholder: "Fecha de creación"%>
-          </div>
             <%= f.submit "Crear Proyecto", class: "btn btn-success btn-lg btn-block" %>
           </div>
-          <% end %>
+        <% end %>
         </div>
       </div>
     </div>
