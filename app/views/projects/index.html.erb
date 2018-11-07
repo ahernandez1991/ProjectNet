@@ -18,4 +18,21 @@
       </div>
     </div>
   </form>
-</body>
+
+<h1>Lista de proyectos inscritos</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Fecha de Creación</th>
+      <th>Fecha de Última Actualización</th>
+    </tr>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.id %></td>
+        <td><%= project.nombre %></td>
+        <td><%= project.created_at %></td>
+        <td><%= project.updated_at %></td>
+      </tr>
+    <% end %>
+  </table>

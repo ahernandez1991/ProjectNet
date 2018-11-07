@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   def index
+    @projects = Project.all
   end
 
   def show
@@ -11,6 +12,7 @@ class ProjectsController < ApplicationController
 
   def create
     @p=Project.new(project_params)
+    @project.user = current_user
     if @p.save
       redirect_to projects_path, notice: "Se ha creado el proyecto exitosamente"
     end
