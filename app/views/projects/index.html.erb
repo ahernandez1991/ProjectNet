@@ -1,10 +1,15 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<form class="form-horizontal" action="/action_page.php">
+<div style="margin-top: 150px margin-left:10px">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <label class="control-label col-sm-2" style="font-family:Georgia; font-size:16px" for="user">Código del Proyecto:</label>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por nombre.." title="Escriba un nombre de proyecto">
+</div>
+<!-- <form class="form-horizontal" action="/action_page.php" style="margin-top:250px">
     <div class="form-group">
       <label class="control-label col-sm-2" style="font-family:Georgia;" for="user">Código del Proyecto:</label>
       <div class="col-sm-4">
@@ -17,11 +22,11 @@
         </p>
       </div>
     </div>
-  </form>
+  </form> -->
 
 <div class="container">
 <h2>Listado de Proyectos Inscritos</h2>
-  <table class="table table-hover">
+  <table class="table table-hover" id="myTable">
     <tr>
       <th>Id</th>
       <th>Nombre</th>
@@ -38,3 +43,23 @@
     <% end %>
   </table>
 </div>
+
+<script>
+  function myFunction() {
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+      if (td) {
+        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+}
+</script>
