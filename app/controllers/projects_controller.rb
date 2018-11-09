@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+
+before_action :private_access, except: [:index, :show]
+
   def index
     @projects = Project.all
   end
@@ -13,9 +16,11 @@ class ProjectsController < ApplicationController
 
   def create
     @p=Project.new(project_params)
-    @project.user = current_user
+    @p.user=current_user
     if @p.save
       redirect_to projects_path, notice: "Se ha creado el proyecto exitosamente"
+    else
+    puts "No se pudo guardar"
     end
   end
 
@@ -24,6 +29,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    
   end
 
   def destroy
@@ -31,7 +37,7 @@ class ProjectsController < ApplicationController
 
 private
   def project_params
-    params.require(:project).permit(:nombre, :fecha)
+    params.require(:project).permit(:nombre)
   end
 
 end

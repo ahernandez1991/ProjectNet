@@ -12,7 +12,5 @@
 
 class Project < ApplicationRecord
   belongs_to :user
-
   validates :nombre, presence: true
-  validates :fecha, presence: true
 end

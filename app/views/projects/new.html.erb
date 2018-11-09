@@ -15,7 +15,7 @@
 
         <%=form_for @p do |f| %>
           <div class="form-group">
-            <%=f.text_field :nombre, class: "form-control input-lg", placeholder: "Nombre del proyecto"%>
+            <%= f.text_field :nombre, class: "form-control input-lg", placeholder: "Nombre del proyecto"%>
           </div>
             <%= f.submit "Crear Proyecto", class: "btn btn-success btn-lg btn-block" %>
           </div>
