@@ -18,7 +18,7 @@ before_action :private_access, except: [:index, :show]
     @p=Project.new(project_params)
     @p.user=current_user
     if @p.save
-      redirect_to projects_path, notice: "Se ha creado el proyecto exitosamente"
+      redirect_to project_path(@p), notice: "Se ha creado el proyecto exitosamente"
     else
     puts "No se pudo guardar"
     end
@@ -29,7 +29,12 @@ before_action :private_access, except: [:index, :show]
   end
 
   def update
-    
+    @p = Project.find(params[:id])
+    if @p.update(project_params)
+      redirect_to project_path(@p), notice: "Se ha guardado el proyecto exitosamente"
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -37,7 +42,7 @@ before_action :private_access, except: [:index, :show]
 
 private
   def project_params
-    params.require(:project).permit(:nombre)
+    params.require(:project).permit(:nombre, :introduccion, :planteamiento, :antecedentes, :justificacion, :marco_teorico, :objetivos, :desarrollo, :conclusiones, :referencias)
   end
 
 end

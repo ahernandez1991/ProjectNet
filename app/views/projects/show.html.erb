@@ -3,7 +3,7 @@
     <div class="col-lg-12">
       <%= form_for @p do |f| %>
       <h1><%= @p.nombre %></h1>
-      <% if signed_in? && @product.user == current_user %>
+      <% if signed_in? && @p.user == current_user %>
         <div align="right">
           <%= link_to "<span style='font-size: 25px' class='glyphicon glyphicon-pencil' data-toogle='tooltip' title='Editar Proyecto'></span>".html_safe, edit_project_path(@p) %>
         </div>

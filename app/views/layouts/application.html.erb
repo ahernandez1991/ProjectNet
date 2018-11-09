@@ -54,7 +54,11 @@
 <% end %>
 <h1 style="font-family:Dosis;" class="col-sm-4 col-sm-offset-0">ProjectNet ®</h1>
 <% if flash[:notice] %>
-  <div class="alert alert-info"><%= flash[:notice] %></div>
+  <div class="col-sm-6 col-sm-offset-3">
+    <div class="alert alert-success alert-dismissible"><%= flash[:notice] %>
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    </div>
+  </div>
 <% end %>
           <%= yield %>
   </body>
