@@ -11,6 +11,7 @@ before_action :public_access, except: [:destroy]
     if user && user.authenticate(params[:password])
     sign_in(user)
     redirect_to projects_path
+    @opciones = false
     else
     flash[:success] = "Correo o contraseña incorrecta"
     render 'new'
@@ -20,5 +21,6 @@ before_action :public_access, except: [:destroy]
   def destroy
     sign_out
     redirect_to root_path
+    @opciones = true
   end
 end
