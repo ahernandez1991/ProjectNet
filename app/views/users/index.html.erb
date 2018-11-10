@@ -1,19 +1,27 @@
-<div class="container">
-<h2>Listado de Usuarios</h2>
-  <table class="table table-hover">
-    <tr>
-      <th>Id</th>
-      <th>Usuario</th>
-      <th>Nombre</th>
-      <th>Fecha de Creación</th>
-    </tr>
-    <% @user.each do |user| %>
-      <tr>
-        <td><%= user.id %></td>
-        <td><%= user.email %></td>
-        <td><%= user.name %></td>
-        <td><%= user.created_at %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <div class="container">
+    <h2>Listado de Usuarios Creados</h2>
+      <table class="table table-striped">
+        <tr>
+          <th>Id</th>
+          <th>Usuario</th>
+          <th>Nombre</th>
+          <th>Fecha de Creación</th>
+        </tr>
+      <% @user.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.email %></td>
+          <td><%= user.name %></td>
+          <td><%= user.created_at %></td>
+        </tr>
+      <% end %>
+      </table>
+  </div>
