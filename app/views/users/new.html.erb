@@ -26,6 +26,10 @@
           <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre" %>
         </div>
 
+        <div class="form-group">
+          <%= f.select :rol, ["Administrador", "Cliente", "Asesor"], {:prompt => 'Rol de Usuario'}, class: "btn btn-danger dropdown-toggle" %>
+        </div>
+        <br>
         <div class="actions">
           <%= f.submit 'Crear Usuario', class: "btn btn-primary btn-block btn-lg" %>
         </div>

@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_08_181438) do
+ActiveRecord::Schema.define(version: 2019_02_20_023713) do
+
+  create_table "equipos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nombre"
+    t.string "serial"
+    t.date "fecha"
+    t.string "marca"
+    t.string "modelo"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nombre"
@@ -35,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_11_08_181438) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "rol"
   end
 
   add_foreign_key "projects", "users"

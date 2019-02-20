@@ -1,11 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
+      <div class="progress">
+        <% multiplicador = 1.1 %>
+        <% if @p.introduccion=="" && @p.planteamiento == "" && @p.antecedentes == "" && @p.justificacion == "" && @p.marco_teorico == "" && @p.objetivos == "" && @p.desarrollo == "" && @p.conclusiones == "" && @p.referencias == ""%>
+          <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progress-bar-danger" aria-valuenow="0" aria-valuemin="0"
+            aria-valuemax="100" style="width:5%">0%
+          </div>
+        <% else if @p.introduccion != ""%>
+          <div class="progress-bar progress-bar-striped active" role="progress-bar-danger" aria-valuenow="0" aria-valuemin="0"
+            aria-valuemax="100" style="width:<%= 10 %>">10%
+          </div>
+        <% end %>
+      </div>
       <%= form_for @p do |f| %>
       <h1><%= @p.nombre %></h1>
       <% if signed_in? && @p.user == current_user %>
         <div align="right">
-          <%= link_to "<span style='font-size: 25px' class='glyphicon glyphicon-pencil' data-toogle='tooltip' title='Editar Proyecto'></span>".html_safe, edit_project_path(@p) %>
+          <%= link_to "<span style='font-size: 25px' class='glyphicon glyphicon-pencil' data-toogle='tooltip' title='Editar Equipo'></span>".html_safe, edit_project_path(@p) %>
         </div>
       <% end %>
         <div class="form-group">

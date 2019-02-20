@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  serial: MyString
+  fecha: 2019-02-19
+  marca: MyString
+  modelo: MyString
+  descripcion: MyString
+
+two:
+  nombre: MyString
+  serial: MyString
+  fecha: 2019-02-19
+  marca: MyString
+  modelo: MyString
+  descripcion: MyString

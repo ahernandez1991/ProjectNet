@@ -5,6 +5,8 @@
 <br>
 <br>
 <br>
+<br>
+<br>
 
   <div class="container">
     <h2>Listado de Usuarios Creados</h2>
@@ -13,6 +15,7 @@
           <th>Id</th>
           <th>Usuario</th>
           <th>Nombre</th>
+          <th>Rol</th>
           <th>Fecha de Creación</th>
         </tr>
       <% @user.each do |user| %>
@@ -20,6 +23,7 @@
           <td><%= user.id %></td>
           <td><%= user.email %></td>
           <td><%= user.name %></td>
+          <td><%= user.rol %></td>
           <td><%= user.created_at %></td>
         </tr>
       <% end %>

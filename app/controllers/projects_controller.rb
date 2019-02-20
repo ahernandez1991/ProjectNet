@@ -38,6 +38,9 @@ before_action :private_access, except: [:index, :show]
   end
 
   def destroy
+    project = Project.find(params[:id])
+    project.destroy
+    redirect_to projects_path, alert: "El proyecto se ha eliminado correctamente"
   end
 
 private

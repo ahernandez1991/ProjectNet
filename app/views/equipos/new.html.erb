@@ -16,6 +16,11 @@
         <%=form_for @p do |f| %>
           <div class="form-group">
             <%= f.text_field :nombre, class: "form-control input-lg", placeholder: "Nombre del equipo"%>
+            <%= f.text_field :serial, class: "form-control input-lg", placeholder: "Serial del equipo"%>
+            <%= f.text_field :fecha, class: "form-control input-lg", placeholder: "Fecha del equipo"%>
+            <%= f.text_field :marca, class: "form-control input-lg", placeholder: "Marca del equipo"%>
+            <%= f.text_field :modelo, class: "form-control input-lg", placeholder: "Modelo del equipo"%>
+            <%= f.text_field :descripcion, class: "form-control input-lg", placeholder: "Pequeña descripción del equipo"%>
           </div>
             <%= f.submit "Crear Equipo", class: "btn btn-success btn-lg btn-block" %>
           </div>
