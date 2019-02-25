@@ -1,12 +1,6 @@
 <div style="margin-top: 150px margin-left:10px">
   <br>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
   <label class="control-label col-sm-3" style="font-family:Georgia; font-size:16px" for="user">Código o Nombre del Equipo:</label>
   <input class="col-sm-6 col-sm-offset-0" type="text" id="myInput" onkeyup="myFunction()" title="Escriba un nombre o código de equipo...">
 </div>
@@ -14,7 +8,7 @@
 <br>
 <div class="container">
 <h2>Listado de Equipos Disponibles</h2>
-  <table class="table table-striped" id="myTable">
+  <table class="table table-striped col-sm-0 col-sm-offset-0" id="myTable">
     <tr>
       <th>Id</th>
       <th>Nombre</th>
@@ -23,6 +17,7 @@
       <th>Marca</th>
       <th>Modelo</th>
       <th>Descripción</th>
+      <th>Disponible</th>
     </tr>
     <% @equipo.each do |equipo| %>
       <tr>
@@ -33,6 +28,54 @@
         <td><%= equipo.marca %></td>
         <td><%= equipo.modelo %></td>
         <td><%= equipo.descripcion %></td>
+        <td><% if equipo.disponibilidad===true %>
+                <button type="button" class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#ModalTrue"></button>
+                <!-- Modal -->
+                  <div class="modal fade" id="ModalTrue" role="dialog">
+                  <div class="modal-dialog">
+
+                <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 align="center" class="modal-title">Confirmar Alquiler</h3>
+                    </div>
+                    <div class="modal-body">
+                      <p>¿Estás seguro que deseas alquilar este equipo?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <%= link_to "<span class='glyphicon glyphicon-thumbs-up'></span> Aceptar ".html_safe, new_user_path %></li>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </div>
+                  </div>
+
+                  </div>
+                  </div>
+            <% elsif equipo.disponibilidad===false %>
+                <button type="button" class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#ModalFalse"></button>
+                <!-- Modal -->
+                  <div class="modal fade" id="ModalFalse" role="dialog">
+                  <div class="modal-dialog">
+
+                <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 align="center" class="modal-title">Aviso Importante</h3>
+                    </div>
+                    <div class="modal-body">
+                      <p>Lo sentimos, este equipo no se encuentra disponible.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+                    </div>
+                  </div>
+
+                  </div>
+                  </div>
+            <% end %>
+        </td>
       </tr>
     <% end %>
   </table>

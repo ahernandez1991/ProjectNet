@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= favicon_link_tag 'favicon.ico' %>
     <title>TecnoRenting</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -40,13 +41,13 @@
       <li><%= link_to "<span class='glyphicon glyphicon-user'></span> Cerrar Sesión ".html_safe, logout_path, method: :delete %></li>
     <% else %>
       <li><%= link_to "<span class='glyphicon glyphicon-log-in'></span> Iniciar Sesión ".html_safe, login_path, method: :new %></li>
-      <li><%= link_to "Regístrate", new_user_path %></li>
+      <li><%= link_to "<span class='glyphicon glyphicon-thumbs-up'></span> Regístrate ".html_safe, new_user_path %></li>
     <% end %>
   </ul>
 </div>
 </nav>
 <% if signed_in? %>
-  <div align="right" class="col-sm-offset-1"><h4>Hola <%=current_user.name%></h4></div>
+  <div align="center" class="col-sm-offset-1"><h4>Hola <%=current_user.name%></h4></div>
 <% end %>
 <dt><h1 style="font-family:Dosis;" class="col-sm-4 col-sm-offset-0"></h1></dt>
 <% if flash[:notice] %>
