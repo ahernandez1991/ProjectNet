@@ -13,7 +13,6 @@
       <th>Id</th>
       <th>Nombre</th>
       <th>Serial</th>
-      <th>Fecha</th>
       <th>Marca</th>
       <th>Modelo</th>
       <th>Descripción</th>
@@ -24,7 +23,6 @@
         <td><%= equipo.id %></td>
         <td><%= equipo.nombre %></td>
         <td><%= equipo.serial %></td>
-        <td><%= equipo.fecha %></td>
         <td><%= equipo.marca %></td>
         <td><%= equipo.modelo %></td>
         <td><%= equipo.descripcion %></td>
@@ -44,7 +42,6 @@
                       <p>¿Estás seguro que deseas alquilar este equipo?</p>
                     </div>
                     <div class="modal-footer">
-                      <%= link_to "<span class='glyphicon glyphicon-thumbs-up'></span> Aceptar ".html_safe, new_user_path %></li>
                       <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
                       <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     </div>
